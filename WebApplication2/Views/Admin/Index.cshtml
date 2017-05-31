@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Admin Panel";
+}
+
+<table class="container table table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>Title</td>
+        <td>Latitude</td>
+        <td>Longitude</td>
+        <td></td>
+    </tr>
+    @foreach(var item in ViewBag.Markers)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.name</td>
+            <td>@item.x</td>
+            <td>@item.y</td>
+            <td class="text-center"><a href="/Admin/Edit/@item.id">Edit</a> | <a href="/Admin/Delete/@item.id">Delete</a></td>
+        </tr>
+    }
+</table>
+<div class="container">
+    <a class="btn btn-success" href="/Admin/Create/">Create</a>
+</div>

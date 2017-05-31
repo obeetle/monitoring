@@ -1,4 +1,8 @@
-﻿@using WebApplication2.Models
+﻿@if (Request.IsAuthenticated)
+{
+    Response.Redirect("/");
+}
+@using WebApplication2.Models
 @model LoginViewModel
 @{
     ViewBag.Title = "Log in";
